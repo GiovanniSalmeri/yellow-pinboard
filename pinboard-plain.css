@@ -1,0 +1,40 @@
+ul.pinboard {
+    padding-left: 0;
+    list-style-type: none;
+    overflow: auto;
+}
+
+ul.pinboard.past {
+    opacity: 0.6;
+}
+
+ul.pinboard li {
+    padding: 0;
+    margin-bottom: 0.5em;
+    clear: both;
+}
+
+ul.pinboard li span.date {
+    color: #c0c0c0;
+}
+
+ul.pinboard li span.date::before {
+    content: "(";
+}
+
+ul.pinboard li span.date::after {
+    content: ")";
+}
+
+ul.pinboard li[class] {
+    padding-left: 0.7em;
+}
+ul.pinboard li.important {
+    border-left: solid 3px #a9a9a9;
+}
+ul.pinboard li.urgent {
+    border-left: solid 3px #ff4500;
+}
+ul.pinboard li.pinned {
+    border-left: solid 3px #4682b4;
+}
