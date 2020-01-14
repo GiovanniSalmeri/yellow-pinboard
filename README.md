@@ -1,5 +1,5 @@
-Pinboard 0.8.4
-==========
+# Pinboard 0.8.9
+
 Pinboard for timed notices.
 
 <p align="center"><img src="pinboard-screenshot.png?raw=true" alt="Screenshot"></p>
