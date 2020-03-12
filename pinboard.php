@@ -1,10 +1,10 @@
 <?php
 // Pinboard extension
-// Copyright (c) 2019 Giovanni Salmeri
+// Copyright (c) 2019-2020 Giovanni Salmeri, https://github.com/GiovanniSalmeri/yellow-pinboard
 // This file may be used and distributed under the terms of the public license.
 
 class YellowPinboard {
-    const VERSION = "0.8.9";
+    const VERSION = "0.8.10";
     const TYPE = "feature";
     public $yellow;         //access to API
     
@@ -55,7 +55,7 @@ class YellowPinboard {
                 if (($noticeStartTime <= time()) &&  (($timeSpan == "current" && $noticeEndTime > time()) || ($timeSpan == "past" && $noticeEndTime <= time())) && (!$tags || array_intersect($noticeTags, $tags))) {
 
                     // Human readable notice date
-                    $noticeDate = date($this->yellow->text->get("DateFormatMedium"), $noticeStartTime);
+                    $noticeDate = date($this->yellow->text->get("coreDateFormatMedium"), $noticeStartTime);
 
                     // Generate HTML
                     $output .= "<li". ($notice[2] ? " class=\"". $notice[2] . "\"" : "").">";
