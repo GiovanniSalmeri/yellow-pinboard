@@ -1,16 +1,8 @@
-# Pinboard 0.8.9
+# Pinboard 0.8.16
 
 Pinboard for timed notices.
 
 <p align="center"><img src="pinboard-screenshot.png?raw=true" alt="Screenshot"></p>
-
-## How to install extension
-
-1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
-2. [Download extension](../../archive/master.zip). If you are using Safari, right click and select 'Download file as'.
-3. Copy `pinboard.zip` into your `system/extensions` folder.
-
-To uninstall delete the [extension files](extension.ini).
 
 ## How to create a pinboard
 
@@ -46,16 +38,7 @@ The following arguments are available, all but the first argument are optional:
 `Max` (default: `0`) = maximum number of notices to show, 0 for unlimited  
 `Tags` = show only notices with any of the tags, wrap multiple tags into quotes  
 
-## Settings
-
-The following settings can be configured in file `system/settings/system.ini`.
-
-`PinboardDir` (default: `media/pinboard/`) = directory for Pinboard files  
-`PinboardStyle` (default: `plain`) = pinboard style (you can choose between `plain` and `icons`) 
-
-If you want to add a new `fancy` style, write a `pinboard-fancy.css`  file and put into the `system/extensions` folder. Do not modify the standard styles, since they will be overwritten in case of update of the extension.
-
-## Examples
+## Example
 
 Showing the pinboard of all current notices:
 
@@ -68,6 +51,19 @@ Showing the pinboard with various options:
     [pinboard notices.psv current 5]
     [pinboard notices.yaml current 0 freetime]
 
+## Settings
+
+The following settings can be configured in file `system/settings/system.ini`.
+
+`PinboardDir` (default: `media/pinboard/`) = directory for Pinboard files  
+`PinboardStyle` (default: `plain`) = pinboard style (you can choose between `plain` and `icons`) 
+
+If you want to add a new `fancy` style, write a `pinboard-fancy.css`  file and put into the `system/extensions` folder. Do not modify the standard styles, since they will be overwritten in case of update of the extension.
+
+## Installation
+
+[Download extension](https://github.com/GiovanniSalmeri/yellow-pinboard/archive/master.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
+
 ## Developer
 
-Giovanni Salmeri.
+Giovanni Salmeri. [Get help](https://github.com/GiovanniSalmeri/yellow-pinboard/issues).

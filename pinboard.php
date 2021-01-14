@@ -1,19 +1,18 @@
 <?php
-// Pinboard extension
-// Copyright (c) 2019-2020 Giovanni Salmeri, https://github.com/GiovanniSalmeri/yellow-pinboard
+// Pinboard extension, https://github.com/GiovanniSalmeri/yellow-pinboard
+// Copyright (c) 2019-2021 Giovanni Salmeri
 // This file may be used and distributed under the terms of the public license.
 
 class YellowPinboard {
-    const VERSION = "0.8.10";
-    const TYPE = "feature";
+    const VERSION = "0.8.16";
     public $yellow;         //access to API
     
     // Handle initialisation
     public function onLoad($yellow) {
         $this->yellow = $yellow;
-        $this->yellow->system->setDefault("pinboardDir", "media/pinboard/");
+        $this->yellow->system->setDefault("pinboardDirectory", "media/pinboard/");
         $this->yellow->system->setDefault("pinboardStyle", "plain");
-        $path = $this->yellow->system->get("pinboardDir");
+        $path = $this->yellow->system->get("pinboardDirectory");
         if (!empty($path) && !is_dir($path)) @mkdir($path, 0777, true);
     }
 
@@ -21,10 +20,10 @@ class YellowPinboard {
     public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
         if ($name=="pinboard" && ($type=="block" || $type=="inline")) {
-            list($noticeList, $timeSpan, $max, $tags) = $this->yellow->toolbox->getTextArgs($text);
+            list($noticeList, $timeSpan, $max, $tags) = $this->yellow->toolbox->getTextArguments($text);
             if ($timeSpan != "past") $timeSpan = "current";
             $tags = preg_split("/[\s,]+/", $tags, 0, PREG_SPLIT_NO_EMPTY);
-            $noticeListName = $this->yellow->system->get("pinboardDir").$noticeList;
+            $noticeListName = $this->yellow->system->get("pinboardDirectory").$noticeList;
 
             // Read and sort notices
             $notices = $this->parseNotices($noticeListName);
@@ -55,19 +54,19 @@ class YellowPinboard {
                 if (($noticeStartTime <= time()) &&  (($timeSpan == "current" && $noticeEndTime > time()) || ($timeSpan == "past" && $noticeEndTime <= time())) && (!$tags || array_intersect($noticeTags, $tags))) {
 
                     // Human readable notice date
-                    $noticeDate = date($this->yellow->text->get("coreDateFormatMedium"), $noticeStartTime);
+                    $noticeDate = date($this->yellow->language->getText("coreDateFormatMedium"), $noticeStartTime);
 
                     // Generate HTML
                     $output .= "<li". ($notice[2] ? " class=\"". $notice[2] . "\"" : "").">";
                     $output .= "<span class=\"desc\">".$this->toHTML($notice[3]). "</span>\n";
-                    $output .= "<span class=\"date\">".$this->yellow->text->getHtml("pinboardPublished").": ".$noticeDate."</span>";
+                    $output .= "<span class=\"date\">".$this->yellow->language->getTextHtml("pinboardPublished").": ".$noticeDate."</span>";
                     $output .= "</li>\n";
                     $noticesShown += 1;
                 }
                 if ($max && $noticesShown >= $max) break; 
             }
             if ($noticesShown == 0) {
-                $output .= "<li>".$this->yellow->text->getHtml("pinboardNoNotice")."</li>";
+                $output .= "<li>".$this->yellow->language->getTextHtml("pinboardNoNotice")."</li>";
             }
             $output .= "</ul>\n";
         }
@@ -106,8 +105,7 @@ class YellowPinboard {
                     } elseif ($line[0] == "#") {
                         continue;
                     } elseif ($currRec >= 0) {
-                        preg_match("/^(.*?):\s+(.*?)\s*$/", $line, $matches);
-                        if ($matches && isset($FIELD[$matches[1]])) {
+                        if (preg_match("/^(.*?):\s+(.*?)\s*$/", $line, $matches) && isset($FIELD[$matches[1]])) {
                             $notices[$currRec][$FIELD[$matches[1]]] = $matches[2];
                         }
                     }
