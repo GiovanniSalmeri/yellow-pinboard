@@ -53,7 +53,7 @@ Showing the pinboard with various options:
 
 ## Settings
 
-The following settings can be configured in file `system/settings/system.ini`.
+The following settings can be configured in file `system/extensions/yellow-system.ini`.
 
 `PinboardDir` (default: `media/pinboard/`) = directory for Pinboard files  
 `PinboardStyle` (default: `plain`) = pinboard style (you can choose between `plain` and `icons`) 
