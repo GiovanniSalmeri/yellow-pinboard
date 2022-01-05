@@ -58,7 +58,7 @@ The following settings can be configured in file `system/extensions/yellow-syste
 `PinboardDir` (default: `media/pinboard/`) = directory for Pinboard files  
 `PinboardStyle` (default: `plain`) = pinboard style (you can choose between `plain` and `icons`) 
 
-If you want to add a new `fancy` style, write a `pinboard-fancy.css`  file and put into the `system/extensions` folder. Do not modify the standard styles, since they will be overwritten in case of update of the extension.
+If you want to add a new `fancy` style, write a `pinboard-fancy.css`  file and put into the `system/extensions` folder.
 
 ## Installation
 
