@@ -1,7 +1,5 @@
 <?php
 // Pinboard extension, https://github.com/GiovanniSalmeri/yellow-pinboard
-// Copyright (c) 2019-2021 Giovanni Salmeri
-// This file may be used and distributed under the terms of the public license.
 
 class YellowPinboard {
     const VERSION = "0.8.16";
