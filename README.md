@@ -27,7 +27,7 @@ The `start` and `end` dates specify the time interval in which the notice is sho
 
 In `content`, use `*` for italic, `**` for bold, `[text](URL)` for linking, `\n` for newline. Other URLs and email addresses are autolinked.
 
-## How to embed a pinboard
+## How to show a pinboard
 
 Create a `[pinboard]` shortcut.
 
