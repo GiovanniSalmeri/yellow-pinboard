@@ -66,4 +66,4 @@ If you want to add a new `fancy` style, write a `pinboard-fancy.css`  file and p
 
 ## Developer
 
-Giovanni Salmeri. [Get help](https://github.com/GiovanniSalmeri/yellow-pinboard/issues).
+Giovanni Salmeri. [Get help](https://datenstrom.se/yellow/help/)
