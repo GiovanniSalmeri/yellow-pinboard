@@ -62,7 +62,7 @@ If you want to add a new `fancy` style, write a `pinboard-fancy.css`  file and p
 
 ## Installation
 
-[Download extension](https://github.com/GiovanniSalmeri/yellow-pinboard/archive/master.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
+[Download extension](https://github.com/GiovanniSalmeri/yellow-pinboard/archive/main.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
 
 ## Developer
 
