@@ -39,7 +39,7 @@ The following arguments are available, all but the first argument are optional:
 
 `Name` = file name of notices list to show  
 `TimeSpan` = show `current` or `past` notices  
-`Max` = number of notices to show, 0 for unlimited  
+`Max` = number of notices to show per shortcut, 0 for unlimited  
 `Tags` = show notices with specific tags, wrap multiple tags into quotes  
 
 If you want to customise pinboards with CSS, write a `pinboard-custom.css` file, put it into your `system/extensions` folder, open file `system/extensions/yellow-system.ini` and change `PinboardStyle: custom`. Another option to customise pinboards with CSS is editing the files in your `system/themes` folder. It's recommended to use the later option.
@@ -73,7 +73,7 @@ Showing a pinboard, various options:
 
 ## Settings
 
-The following settings can be configured in file `system/extensions/yellow-system.ini`.
+The following settings can be configured in file `system/extensions/yellow-system.ini`:
 
 `PinboardDir` = directory for pinboard files  
 `PinboardStyle` = pinboard style, e.g. `plain` and `icons` 
