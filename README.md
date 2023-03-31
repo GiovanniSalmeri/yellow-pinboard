@@ -4,9 +4,13 @@ Pinboard for timed notices.
 
 <p align="center"><img src="pinboard-screenshot.png?raw=true" alt="Screenshot"></p>
 
+## How to install an extension
+
+[Download ZIP file](https://github.com/GiovanniSalmeri/yellow-pinboard/archive/main.zip) and copy it into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
+
 ## How to create a pinboard
 
-Put one or more notices files into `media/pinboard/`. You can use different formats (choose whichever you like better).
+Put one or more pinboard files into `media/pinboard/`. You can use YAML, PSV, TSV and CSV format, choose whichever you like better.
 
 Notices in a `.yaml` file (each notice begins with `---`):
 
@@ -25,7 +29,7 @@ Notices can be written also in a `.tsv` or a `.csv` format (in this latter, cont
 
 The `start` and `end` dates specify the time interval in which the notice is shown (end date is meant inclusive). The `class`, if present, is used to style the notice; notices classed as `pinned` are moreover listed at the top. The standard styles define the classes `important`, `urgent` and `pinned`: other classes can be freely added as needed.
 
-In `content`, use `*` for italic, `**` for bold, `[text](URL)` for linking, `\n` for newline. Other URLs and email addresses are autolinked.
+In `content`, use `*` for italic, `**` for bold, `[text](URL)` for linking, `\n` for newline. Other URLs and email addresses are auto-linked.
 
 ## How to show a pinboard
 
@@ -33,37 +37,47 @@ Create a `[pinboard]` shortcut.
 
 The following arguments are available, all but the first argument are optional:
 
-`Location` = filename of notices list to show  
-`TimeSpan` (default: `current`) = show `current` or `past` notices  
-`Max` (default: `0`) = maximum number of notices to show, 0 for unlimited  
-`Tags` = show only notices with any of the tags, wrap multiple tags into quotes  
+`Name` = file name of notices list to show  
+`TimeSpan` = show `current` or `past` notices  
+`Max` = number of notices to show per shortcut, 0 for unlimited  
+`Tags` = show notices with specific tags, wrap multiple tags into quotes  
 
-## Example
+If you want to customise pinboards with CSS, write a `pinboard-custom.css` file, put it into your `system/extensions` folder, open file `system/extensions/yellow-system.ini` and change `PinboardStyle: custom`. Another option to customise pinboards with CSS is editing the files in your `system/themes` folder. It's recommended to use the later option.
 
-Showing the pinboard of all current notices:
+## Examples
+
+Content file with a pinboard:
+
+    ---
+    Title: Example page
+    ---
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+    labore et dolore magna pizza. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
+    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt 
+    in culpa qui officia deserunt mollit anim id est laborum.
+
+    [pinboard notices.psv]
+    
+Showing a pinboard, different files:
 
     [pinboard notices.psv]
     [pinboard notices.yaml]
+    [pinboard notices.csv]
 
-Showing the pinboard with various options:
+Showing a pinboard, various options:
 
     [pinboard notices.psv past]
-    [pinboard notices.psv current 5]
+    [pinboard notices.yaml current 5]
     [pinboard notices.yaml current 0 freetime]
 
 ## Settings
 
-The following settings can be configured in file `system/extensions/yellow-system.ini`.
+The following settings can be configured in file `system/extensions/yellow-system.ini`:
 
-`PinboardDir` (default: `media/pinboard/`) = directory for Pinboard files  
-`PinboardStyle` (default: `plain`) = pinboard style (you can choose between `plain` and `icons`) 
-
-If you want to add a new `fancy` style, write a `pinboard-fancy.css`  file and put into the `system/extensions` folder.
-
-## Installation
-
-[Download extension](https://github.com/GiovanniSalmeri/yellow-pinboard/archive/main.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
+`PinboardDir` = directory for pinboard files  
+`PinboardStyle` = pinboard style, e.g. `plain` and `icons` 
 
 ## Developer
 
-Giovanni Salmeri. [Get help](https://datenstrom.se/yellow/help/)
+Giovanni Salmeri. [Get help](https://datenstrom.se/yellow/help/).
