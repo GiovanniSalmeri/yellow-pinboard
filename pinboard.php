@@ -12,6 +12,29 @@ class YellowPinboard {
         $this->yellow->system->setDefault("pinboardStyle", "plain");
         $path = $this->yellow->system->get("pinboardDirectory");
         if (!is_string_empty($path) && !is_dir($path)) @mkdir($path, 0777, true);
+        $this->yellow->language->setDefaults([
+            "Language: en",
+            "PinboardNoNotice: No notice at the moment",
+            "PinboardPublished: Published",
+            "Language: de",
+            "PinboardNoNotice: Zur Zeit keine Benachrichtigung",
+            "PinboardPublished: Veröffentlicht",
+            "Language: fr",
+            "PinboardNoNotice: Aucun avis pour le moment",
+            "PinboardPublished: Publié",
+            "Language: it",
+            "PinboardNoNotice: Nessun avviso per il momento",
+            "PinboardPublished: Pubblicato",
+            "Language: es",
+            "PinboardNoNotice: No hay noticias por el momento",
+            "PinboardPublished: Publicado",
+            "Language: nl",
+            "PinboardNoNotice: Op dit moment geen bericht",
+            "PinboardPublished: Gepubliceerd",
+            "Language: pt",
+            "PinboardNoNotice: Nenhum aviso no momento",
+            "PinboardPublished: Publicado",
+        ]);
     }
 
     // Handle page content of shortcut
