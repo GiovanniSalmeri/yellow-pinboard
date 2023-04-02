@@ -11,7 +11,7 @@ class YellowPinboard {
         $this->yellow->system->setDefault("pinboardDirectory", "media/pinboard/");
         $this->yellow->system->setDefault("pinboardStyle", "plain");
         $path = $this->yellow->system->get("pinboardDirectory");
-        if (!empty($path) && !is_dir($path)) @mkdir($path, 0777, true);
+        if (!is_string_empty($path) && !is_dir($path)) @mkdir($path, 0777, true);
     }
 
     // Handle page content of shortcut
