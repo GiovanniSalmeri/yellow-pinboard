@@ -8,6 +8,19 @@ Pinboard for timed notices.
 
 [Download ZIP file](https://github.com/GiovanniSalmeri/yellow-pinboard/archive/main.zip) and copy it into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
 
+## How to show a pinboard
+
+Create a `[pinboard]` shortcut.
+
+The following arguments are available, all but the first argument are optional:
+
+`Name` = file name of pinboard  
+`TimeSpan` = `current` or `past`  
+`Max` = number of notices to show per shortcut, 0 for unlimited  
+`Tags` = tags of notices to show, wrap multiple tags into quotes  
+
+If you want to customise pinboards with CSS, write a `pinboard-custom.css` file, put it into your `system/extensions` folder, open file `system/extensions/yellow-system.ini` and change `PinboardStyle: custom`. Another option to customise pinboards with CSS is editing the files in your `system/themes` folder. It's recommended to use the latter option.
+
 ## How to create a pinboard
 
 Put one or more pinboard files into `media/pinboard/`. You can use YAML, PSV, TSV and CSV format, choose whichever you like better.
@@ -30,19 +43,6 @@ Notices can be written also in a `.tsv` or a `.csv` format (in this latter, cont
 The `start` and `end` dates specify the time interval in which the notice is shown (end date is meant inclusive). The `class`, if present, is used to style the notice; notices classed as `pinned` are moreover listed at the top. The standard styles define the classes `important`, `urgent` and `pinned`: other classes can be freely added as needed.
 
 In `content`, use `*` for italic, `**` for bold, `[text](URL)` for linking, `\n` for newline. Other URLs and email addresses are auto-linked.
-
-## How to show a pinboard
-
-Create a `[pinboard]` shortcut.
-
-The following arguments are available, all but the first argument are optional:
-
-`Name` = file name of notices list to show  
-`TimeSpan` = show `current` or `past` notices  
-`Max` = number of notices to show per shortcut, 0 for unlimited  
-`Tags` = show notices with specific tags, wrap multiple tags into quotes  
-
-If you want to customise pinboards with CSS, write a `pinboard-custom.css` file, put it into your `system/extensions` folder, open file `system/extensions/yellow-system.ini` and change `PinboardStyle: custom`. Another option to customise pinboards with CSS is editing the files in your `system/themes` folder. It's recommended to use the later option.
 
 ## Examples
 
