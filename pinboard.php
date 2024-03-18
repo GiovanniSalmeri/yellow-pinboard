@@ -12,7 +12,7 @@ class YellowPinboard {
         $this->yellow->system->setDefault("pinboardStyle", "plain");
         $path = $this->yellow->system->get("pinboardDirectory");
         if (!is_string_empty($path) && !is_dir($path)) @mkdir($path, 0777, true);
-        $this->yellow->language->setDefaults([
+        $this->yellow->language->setDefaults(array(
             "Language: en",
             "PinboardNoNotice: No notice at the moment",
             "PinboardPublished: Published",
@@ -34,7 +34,7 @@ class YellowPinboard {
             "Language: pt",
             "PinboardNoNotice: Nenhum aviso no momento",
             "PinboardPublished: Publicado",
-        ]);
+        ));
     }
 
     // Handle page content of shortcut
