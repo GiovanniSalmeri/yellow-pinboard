@@ -2,7 +2,7 @@
 // Pinboard extension, https://github.com/GiovanniSalmeri/yellow-pinboard
 
 class YellowPinboard {
-    const VERSION = "0.8.16";
+    const VERSION = "0.9.1";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -38,7 +38,7 @@ class YellowPinboard {
     }
 
     // Handle page content of shortcut
-    public function onParseContentShortcut($page, $name, $text, $type) {
+    public function onParseContentElement($page, $name, $text, $attributes, $type) {
         $output = null;
         if ($name=="pinboard" && ($type=="block" || $type=="inline")) {
             list($noticeList, $timeSpan, $max, $tags) = $this->yellow->toolbox->getTextArguments($text);
@@ -152,9 +152,9 @@ class YellowPinboard {
     public function onParsePageExtra($page, $name) {
         $output = null;
         if ($name=="header") {
-            $extensionLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreExtensionLocation");
+            $assetLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreAssetLocation");
             $style = $this->yellow->system->get("pinboardStyle");
-            $output .= "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$extensionLocation}pinboard-{$style}.css\" />\n";
+            $output .= "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$assetLocation}pinboard-{$style}.css\" />\n";
         }
         return $output;
     }
