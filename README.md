@@ -19,7 +19,7 @@ The following arguments are available, all but the first argument are optional:
 `Max` = number of notices to show per shortcut, 0 for unlimited  
 `Tags` = tags of notices to show, wrap multiple tags into quotes  
 
-If you want to customise the events with CSS, write a `pinboard-custom.css` file, put it into your `system/themes` folder, open file `system/extensions/yellow-system.ini` and change `PinboardStyle: custom`.
+If you want to customise the pinboard with CSS, write a `pinboard-custom.css` file, put it into your `system/themes` folder, open file `system/extensions/yellow-system.ini` and change `PinboardStyle: custom`.
 
 ## How to create a pinboard
 
