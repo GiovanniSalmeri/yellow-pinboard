@@ -2,7 +2,7 @@
 // Pinboard extension, https://github.com/GiovanniSalmeri/yellow-pinboard
 
 class YellowPinboard {
-    const VERSION = "0.9.1";
+    const VERSION = "1.0.0";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -154,7 +154,7 @@ class YellowPinboard {
         if ($name=="header") {
             $assetLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreAssetLocation");
             $style = $this->yellow->system->get("pinboardStyle");
-            $output .= "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$assetLocation}pinboard-{$style}.css\" />\n";
+            $output .= "<link rel=\"stylesheet\" media=\"all\" href=\"{$assetLocation}pinboard-{$style}.css\" />\n";
         }
         return $output;
     }

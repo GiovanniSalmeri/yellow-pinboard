@@ -1,8 +1,8 @@
-# Pinboard 0.9.1
+# Pinboard 1.0.0
 
-Pinboard for timed notices.
+Pinboard for timed notices. Developed by Giovanni Salmeri.
 
-<p align="center"><img src="SCREENSHOT.png" alt="Screenshot"></p>
+<p align="center"><img src="screenshot.png" alt="Screenshot"></p>
 
 ## How to install an extension
 
@@ -78,6 +78,4 @@ The following settings can be configured in file `system/extensions/yellow-syste
 `PinboardDirectory` = directory for pinboard files  
 `PinboardStyle` = pinboard style, e.g. `plain` and `icons` 
 
-## Developer
-
-Giovanni Salmeri. [Get help](https://datenstrom.se/yellow/help/).
+Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
